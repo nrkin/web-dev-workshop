@@ -1,147 +1,99 @@
-# Introduction
+## Web dev workshop
 
-You have been hired as a web development intern by "Woofer", a software company trying to make a very "unique", "never-seen-before" social media website.
+The monorepo for the Helpshift web dev workshop
 
-The senior engineers have implemented a lot of the code, but there are still some tasks left, and they have been assigned to you. Are you up for the challenge?
+## Getting Started with github codespaces
 
-# Pre-requisites for this workshop
+### Setting up a codespace
 
-This workshop assumes that you have a foundational grasp of basic web technologies. You will have an easier time if you have:
+- Step 1 - Click on code
+- Step 2 - Click on create codespace on main and wait for setup
 
-1. Created a HTML page before
-2. Used some CSS to style it
-3. Tried writing some JavaScript to bring interactivity to it
+<img width="1430" alt="Screenshot 2023-04-05 at 7 34 49 PM" src="https://user-images.githubusercontent.com/22174051/230105403-457f6947-e9cd-4944-85be-5a2108a2845d.png">
 
-For JavaScript, it's really useful if you understand how to declare functions, variables, and write conditional statements (if/else). Even if you have understood these concepts in some other programming language, that should be enough.
+### Setup frontend on your codespace
 
-If you haven't done these things before, we highly recommend going through the following pages:
+- Step 1 - Setup and start frontend by executing `make serve-frontend` on the terminal
+<img width="1658" alt="Screenshot 2023-04-05 at 7 37 38 PM" src="https://user-images.githubusercontent.com/22174051/230106220-158857b8-cbc9-4326-a089-0bc5049e19ee.png">
 
-1. For HTML: https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics
-2. For CSS: https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics
-3. For Javascript: https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics
+- Step 2 - Go to ports and choose port 4400
 
-Ideally you should go through these resources over and over again in the beginning, gaining a deeper understanding with each reading and searching online for doubts until you feel comfortable with the concepts.
 
-# How the workshop works
+https://user-images.githubusercontent.com/22174051/230129169-e7765a02-2ecb-40cf-9418-99375d9f5403.mov
 
-The workshop is divided into checkpoints. Each checkpoint contains a few problems/tasks. You should spend ~20 minutes on each checkpoint. Once you solve the problem (or if you are stuck), you can simply move to the next checkpoint using the `level-up` script to see the solution.
 
-## Using the level-up script
+<br/>
 
-<!-- Work in progress [Nachiket, Sumeet] -->
+- Step 3 - Change port visibility to **public** for port 4400 (right click on the visibility column to see options)
 
-## Using GitHub Codespaces
+https://user-images.githubusercontent.com/22174051/230129682-adf010c5-a1f5-44dc-b1af-2ecb2a49aaa7.mov
 
-Although you can run the entire workshop code locally, we recommend using GitHub CodeSpaces to skip the painful process of having to set everything up. This is especially useful if you are completely new to web development. Follow these steps to start using GitHub Codespaces for the workshop:
+<br/>
 
-<!-- Work in progress [Rishabh, Somya] -->
+- Step 4 - Copy the frontend local address and paste in a new tab in browser
 
-# Outcomes of this workshop
+https://user-images.githubusercontent.com/22174051/230132148-1385d724-269f-4728-931d-2fa879a711d2.mov
 
-At the end of this workshop, we hope that you will understand the basics of:
+<br/>
 
-1. How a software product is built from the ground up (user stories, app design, feature breakdown)
-2. How frontend, backend, and databases interact with each other (with per-feature examples, contracts)
-3. How version control works and why it is necessary
-4. Backend basics (models, routes, controllers), frontend basics (components, styling, handling events, network calls), and HTTP requests (GET, POST, PUT, DELETE)
 
-# Checkpoints
+### Setup backend on your codespace
 
-## Checkpoint 1: "Forming" the basics
+- Step 1 - Setup and start the backend server by executing `make serve-backend` in a new terminal
 
-The frontend is created using Next.js. You can think of Next.js like React.js with some bells and whistles. With Next.js we can easily define routes, fetch data from the server using special functions, and make our deployments easier using "Vercel".
 
-You might feel a bit scared looking at all these folders and files, but it'll make sense in a few minutes.
+https://user-images.githubusercontent.com/22174051/230135531-fb00f0d1-9ee9-4fa8-a076-5917f511dadb.mov
 
-The only folders you should be concerned with are:
 
-1. `src` stands for "source". This is where all the source code exists
-2. `src/pages` - These are all the routes that your users will be able to navigate to
-3. `src/components` - This is where we store reusable or logically separate chunks of our code so we can import and use them in our `pages`
+<br />
 
-For this checkpoint, we'll be looking at the following file: `pages/auth/register.jsx`.
+- Step 2 - Go to ports and choose port 5000
 
-### Task 1: The "handle" problem
+https://user-images.githubusercontent.com/22174051/230135885-cedf906e-cf83-4770-b7ef-7059e1006450.mov
 
-We have a form that accepts a display name, and an email. However, we still need to add a "password" input and a "handle", with which the end-user can be easily identified.
-Take a look at the "name" and "email" fields, and try to implement "password" and "handle" inputs. If you're feeling stuck, don't be afraid to use use online resources (cough, Chat, cough, GPT). But we highly recommend trying it out by yourself first to build an understanding of how forms are created.
+<br />
 
-Some helpful notes for you:
+- Step 3 - Change port visibility to **public** for port 5000 (right click on the visibility column to see options)
 
-1. `onChange` attribute in the `<input />` tag informs you whenever the input value changes. Use that to set your variable.
-2. The password text should not be visible! Try searching for "HTML input types"
 
-Key learning:
-How data flows from a user's keyboard into the actual application
+https://user-images.githubusercontent.com/22174051/230136280-e93fb4a2-25c2-4298-a3a0-46733b96c995.mov
 
-### Task 2: Styling the register button
+<br />
 
-The registration button looks a bit weird, don't you think? Let's use Tailwind classes to spruce it up!
-Tailwind is insanely easy to understand because each class (usually) applies just one style.
 
-Check out some examples of Tailwind buttons online and try some stuff out yourself:
-https://flowbite.com/docs/components/buttons/
+### Verify if setup is completed successfully
 
-We also want to make the button look faded when it is disabled. How can we do that?
+Step 1 - Copy the frontend local address and paste in a new tab in browser
 
-Key learning:
-How atomic CSS can be used to compose complex UIs in a very simple way
+https://user-images.githubusercontent.com/22174051/230132148-1385d724-269f-4728-931d-2fa879a711d2.mov
 
-### Task 3: Branding!
+<br />
 
-Our product needs some branding. Can you figure out a nice way of adding a "Dog" icon to the top of our form?
+Step 2 - Click on registration and create a new user
 
-Key learning:
-How external resources can be added to a React application.
 
-## Checkpoint 2: RESTing with APIs!
 
-APIs are the backbone of web development. Whenever we want to do anything persistent (long-lasting), such as storing a user's information in a database, we have to make an API call to our application server.
+https://user-images.githubusercontent.com/22174051/230142040-0a41213e-f757-472a-bb0c-b60d74eb2644.mov
 
-### Task 1: Handling the button click
 
-When users click on the "Register" button, we should be able to detect it.
-Can you hook up the `<form>` tag to fire the `onFormSubmit` function?
+<br />
 
-### Task 2: Making your first API call
+And voila, you're setup is complete !!!
 
-We will use the "fetch" function to submit our form to the backend. Although we haven't yet implemented the registration endpoint, we will be sending `name`, `email`, `handle`, and `password` in the body of our POST request.
 
-Check out an example of `fetch` here: https://developer.mozilla.org/en-US/docs/Web/API/fetch#examples
+## Levels
+You can start by running
+```
+./start
+```
 
-Key learning:
-How data flows from the client (browser) to the server
+The project has different levels (chapters) each focusing on a particular area. You can switch to different levels by,
+```
+./level_up
+```
 
-## Checkpoint 3: Storing user details in the database
+You can start over again by running
+```
+./restart
+```
 
-Our backend is written using Node.js. Again, the folder structure might seem a bit daunting at first, but here's what you need to know:
-
-1. All the entities in our system, and their relationships are defined in the `models` folder
-2. All the "endpoints" with which we can interact with the database are present in the `routes` folder
-3. Whenever a request hits a "route", a controller (a function that can process requests) will be called. Controllers can interact with the database and return a response, which will be made available to the frontend. Controllers are present in a folder called `controllers`
-
-We will learn more about database modelling in a future checkpoint. For now, this is created for you, and you have to focus on adding a route and a controller for this route.
-
-### Task 1: Create a route for registering our user
-
-We are firing a network request on `POST /user` from the frontend, so we should define the relevant route on the backend in `routes/users.js`.
-
-Key learning:
-API calls on the frontend are mapped to `routes` on the backend
-
-### Task 2: Store the user in the database
-
-We are using an ORM (a library that helps us interact easily with the underlying database) called Sequelize to store and retrieve data from the database. Can you write a query to create a new user using the request data?
-
-Note how we have hashed the user's password since it's not a good practice to store plain-text passwords.
-
-Key learning:
-How data is stored in a database so it can last there long-term!
-
-### Task 3: Return success or error to the frontend
-
-Once we store the data successfully, we want to return a response. If the database entry was successful, return a successful response, else we return an error.
-Look around in the codebase to see how we can do this!
-
-Key learning:
-Each route can either be successful or unsuccessful. We must account for both cases when creating a controller.

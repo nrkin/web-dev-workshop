@@ -22,7 +22,9 @@ const whitelist = [
   "http://localhost:5000",
   "http://localhost:3000",
   "http://localhost:6000",
-  "http://localhost:4400"
+  "http://localhost:4400",
+  `https://${process.env.CODESPACE_NAME}-4400.preview.app.github.dev`,
+  `https://${process.env.CODESPACE_NAME}-5000.preview.app.github.dev`
 ];
 
 app.use((req, res, next) => {
@@ -38,12 +40,17 @@ app.use((req, res, next) => {
 
 // Session
 const { secret, timeout } = config.session;
+const cookie = { maxAge: timeout, httpOnly: false };
+if (config.server.isCodeSpaceEnv) {
+  cookie.httpOnly = true;
+  cookie.domain = ".preview.app.github.dev";
+}
 
 app.use(
   session({
     secret: secret,
     store: sessionStore,
-    cookie: { maxAge: timeout },
+    cookie: cookie,
     saveUninitialized: false,
     resave: false
   })
@@ -57,9 +64,10 @@ app.use(passport.session());
 const userRouter = require("./routes/user");
 const tweetRouter = require("./routes/tweet");
 const retweetRouter = require("./routes/retweet");
-const hashtagRouter = require("./routes/hashtag");
 const followsRouter = require("./routes/follows");
+const errorHandler = require("./middlewares/errorHandler");
 
-app.use("/", [userRouter, tweetRouter, retweetRouter, hashtagRouter, followsRouter]);
+app.use("/", [userRouter, tweetRouter, retweetRouter, followsRouter]);
+app.use(errorHandler);
 
 module.exports = app;
